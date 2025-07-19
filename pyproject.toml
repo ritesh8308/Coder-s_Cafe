@@ -1,0 +1,23 @@
+[project]
+name = "cafe-manager"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "Ritesh Mane",email = "riteshmane8308@gmail.com"}
+]
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "flask (>=3.1.1,<4.0.0)",
+    "flask-sqlalchemy (>=3.1.1,<4.0.0)",
+    "flask-wtf (>=1.2.2,<2.0.0)",
+    "weasyprint (>=65.1,<66.0)"
+]
+
+[tool.poetry]
+packages = [{include = "cafe_manager", from = "src"}]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
