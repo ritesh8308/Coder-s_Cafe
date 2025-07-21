@@ -1,3 +1,4 @@
+from datetime import datetime
 from app import db
 
 class MenuItem(db.Model):
@@ -12,6 +13,7 @@ class Order(db.Model):
     table_number = db.Column(db.Integer, nullable=False)
     order_time = db.Column(db.DateTime, server_default=db.func.now())
     status = db.Column(db.String(20), default="pending")
+    created_at = db.Column(db.DateTime, default=datetime.utcnow)
     items = db.relationship('OrderItem', backref='order', cascade="all, delete-orphan")
     payment = db.relationship('Payment', backref='order', uselist=False)
 
