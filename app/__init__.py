@@ -20,5 +20,13 @@ def create_app():
         from .models import models  # Loads models from models.py
         db.create_all()
 
+
+    from .routes.menu import menu_bp
+    app.register_blueprint(menu_bp)
+
+    from .routes.order import order_bp
+    app.register_blueprint(order_bp)
+
+
     # TODO: Register blueprints here later (menu, order, billing)
     return app

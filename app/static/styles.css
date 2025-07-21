@@ -1,0 +1,71 @@
+body {
+    background-color: #fdf8f4;
+    font-family: 'Segoe UI', sans-serif;
+    color: #4b3f32;
+}
+
+h1 {
+    font-weight: bold;
+    text-align: center;
+    color: #6d4c41;
+    margin-bottom: 30px;
+}
+
+form input,
+form button {
+    font-size: 0.95rem;
+}
+
+form .form-control {
+    border: 1px solid #d7ccc8;
+    background-color: #fffaf5;
+}
+
+table {
+    border: 1px solid #d7ccc8;
+}
+
+table th {
+    background-color: #8d6e63;
+    color: #fff;
+    text-align: center;
+}
+
+table td {
+    background-color: #fff;
+    vertical-align: middle;
+}
+
+.btn-success {
+    background-color: #6d9773;
+    border-color: #6d9773;
+}
+
+.btn-warning {
+    background-color: #ffc107;
+    border-color: #ffa000;
+}
+
+.btn-danger {
+    background-color: #e57373;
+    border-color: #e53935;
+}
+
+.btn-sm {
+    font-size: 0.8rem;
+}
+
+.flash.success {
+    background-color: #c8e6c9;
+    color: #2e7d32;
+}
+
+.flash.info {
+    background-color: #fff9c4;
+    color: #f9a825;
+}
+
+.flash.warning {
+    background-color: #ffccbc;
+    color: #d84315;
+}
