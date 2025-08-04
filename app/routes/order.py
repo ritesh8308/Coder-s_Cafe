@@ -3,11 +3,15 @@ from app import db
 from app.models.models import MenuItem, Order, OrderItem
 from flask import make_response
 from weasyprint import HTML
+from app.forms import OrderForm
+from app.models import MenuItem
 
 order_bp = Blueprint('order', __name__)
 
 @order_bp.route('/order', methods=['GET', 'POST'])
 def create_order():
+    form = OrderForm()
+    form.menu_items.choices = [(item.id, item.name) for item in MenuItem.query.filter_by(is_available=True).all()]
     menu_items = MenuItem.query.filter_by(is_available=True).all()
 
     if request.method == 'POST':
@@ -26,7 +30,8 @@ def create_order():
         db.session.commit()
         flash("✅ Order placed successfully!", "success")
         return redirect(url_for('order.order_success', order_id=new_order.id))
-    return render_template('order.html', menu_items=menu_items)
+        
+        return render_template('order.html', form=form, menu_items=menu_items)
 
 @order_bp.route('/order/success/<int:order_id>')
 def order_success(order_id):
